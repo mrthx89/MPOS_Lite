@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01AA1930-D049-4050-901C-A34BBE18A255}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Sub Main</StartupObject>
+    <RootNamespace>MPOS.Lite</RootNamespace>
+    <AssemblyName>MPOS.Lite</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>MPOS.Lite.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>MPOS.Lite.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data">
+      <HintPath>..\Dll\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Application\Controller\IMP.vb" />
+    <Compile Include="Application\Controller\IRS.vb" />
+    <Compile Include="Application\Model\Barang.vb" />
+    <Compile Include="Application\Model\Filter.vb" />
+    <Compile Include="Application\Model\Kontak.vb" />
+    <Compile Include="Application\Model\Pembelian.vb" />
+    <Compile Include="Application\Model\User.vb" />
+    <Compile Include="Application\Model\UserLogin.vb" />
+    <Compile Include="Application\Repository\Ini.vb" />
+    <Compile Include="Application\Repository\Public.vb" />
+    <Compile Include="Application\Repository\Registry.vb" />
+    <Compile Include="Application\Repository\RepDatabase.vb" />
+    <Compile Include="Application\Repository\Utils.vb" />
+    <Compile Include="Application\View\frmDaftarBarang.Designer.vb">
+      <DependentUpon>frmDaftarBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Application\View\frmDaftarBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\View\frmDaftarKontak.Designer.vb">
+      <DependentUpon>frmDaftarKontak.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Application\View\frmDaftarKontak.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\View\frmDaftarPembelian.Designer.vb">
+      <DependentUpon>frmDaftarPembelian.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Application\View\frmDaftarPembelian.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\View\frmEntriBarang.Designer.vb">
+      <DependentUpon>frmEntriBarang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Application\View\frmEntriBarang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\View\frmEntriKontak.Designer.vb">
+      <DependentUpon>frmEntriKontak.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Application\View\frmEntriKontak.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\View\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Application\View\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\View\frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Application\View\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Application\View\frmSettingDatabase.Designer.vb">
+      <DependentUpon>frmSettingDatabase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Application\View\frmSettingDatabase.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Application\View\frmDaftarBarang.resx">
+      <DependentUpon>frmDaftarBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\View\frmDaftarKontak.resx">
+      <DependentUpon>frmDaftarKontak.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\View\frmDaftarPembelian.resx">
+      <DependentUpon>frmDaftarPembelian.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\View\frmEntriBarang.resx">
+      <DependentUpon>frmEntriBarang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\View\frmEntriKontak.resx">
+      <DependentUpon>frmEntriKontak.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\View\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\View\frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Application\View\frmSettingDatabase.resx">
+      <DependentUpon>frmSettingDatabase.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address_book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barcode-ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\database-gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_text-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document_text-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employees-key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employees-lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factory-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\graph_sales-coins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\inventory-info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\money_banknote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nav_blue_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload_rotate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report-info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shipment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shopping-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash_bin-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MetroFramework\MetroFramework.Design\MetroFramework.Design.csproj">
+      <Project>{7316584d-9a16-4280-a8ab-6d45198c6e4d}</Project>
+      <Name>MetroFramework.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetroFramework\MetroFramework.Fonts\MetroFramework.Fonts.csproj">
+      <Project>{5a2fcae8-c2fa-41bd-90ea-16103ea07b26}</Project>
+      <Name>MetroFramework.Fonts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetroFramework\MetroFramework\MetroFramework.csproj">
+      <Project>{bb41ac8b-cbed-4387-a7e0-4567edb3f57f}</Project>
+      <Name>MetroFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
